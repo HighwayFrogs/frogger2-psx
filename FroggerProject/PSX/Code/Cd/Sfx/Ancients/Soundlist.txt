@@ -1,0 +1,53 @@
+Ancients (Incomplete)
+
+Beetle.obe
+		BeetleA.wav - scurry
+
+Elephant.obe
+		ElephantA.wav - amble - 2.667(s) looping
+		(my ref) 	1st foot 0.2667
+				2nd foot 0.9333
+				3rd foot 1.6
+				4th foot 2.2667
+
+		ElephantB.wav - gallop - 1.333(s) looping
+		(my ref)	1st foot 0.1333
+				back leg 0.4
+				front l	 0.4667
+				bl	 0.7333
+				fl	 0.8
+				bl	 1.0667
+				fl	 1.1333
+
+Warthog.obe
+		WarthogA.wav - gallop - 1(s) looping
+		(my ref)	fl	 0.2
+				bl	 0.333
+				fl	 0.733
+				bl	 0.867
+
+Mummy.obe
+		MummyA.wav - hop a - 1(s) looping
+		boing from start
+		MummyB.wav - hop b - 2(s) looping
+		2 hops
+
+		MummyC.wav - attack - one shot
+`		small hop at 	0.2
+		first punch at 	1.0
+		2nd 		1.4
+		3rd 		1.533
+		4th 		1.866
+		flip onto back	2.066
+		tail flip	2.6
+		land 		3.266
+				
+
+Scorpion.obe
+		ScorpionA - walk - 0.8(s) looping
+		(my ref) 6 legs 2 cycles 12 steps
+		0.06667 intervals
+
+Also needed are sounds of grinding rock...
+
+Blocks.wav - grinding rock - loops

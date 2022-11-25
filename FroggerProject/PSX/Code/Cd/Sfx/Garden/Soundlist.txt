@@ -1,0 +1,17 @@
+/*
+
+Model File	Sound File	Anim Number 	(LOOPING / PLAYONCE)	
+				(-1 = Always)
+----------------------------------------------------------------------- */
+
+Bee.obe,	BeeA.wav,	-1,		LOOPING,
+moa.obe,	MoaA.wav,	-1,		LOOPING,
+Mole.obe,	MoleA.wav, 	attack, 	PLAYONCE,
+Mole.obe,	MoleB.wav,	down,		PLAYONCE,
+Mole.obe,	MoleD.wav,	scratch,	PLAYONCE,
+Pecker.obe,	PeckerC.wav,	peck,		PLAYONCE,
+Roll.obe,	RollA.wav,	-1,		LOOPING,
+Snapper.obe,	SnapperA.wav,	rustling, 	PLAYONCE,
+Snapper.obe,	SnapperB.wav,   Attack,		PLAYONCE,
+Snapper.obe,	SnapperC.wav,	yawn,		PLAYONCE,
+Snapper.obe,	SnapperD.wav,	sleep,		LOOPING,

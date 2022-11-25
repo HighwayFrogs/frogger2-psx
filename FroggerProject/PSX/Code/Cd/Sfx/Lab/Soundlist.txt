@@ -1,0 +1,51 @@
+Laboratory (near finished)
+
+e209.obe
+	e209A.wav - Walk cycle - 1.267 (s) length - looping
+	ff at start
+	2ndf	at 0.667 (s)
+
+ape.obe
+
+bin.obe
+	binA.wav - snap - 1s
+	snaps shut at 0.8
+
+bot.obe
+
+cam.obe
+	camC.wav - cam left anim
+	(my info)	1st arm start for 0.666
+			at 0.2 sml for 0.2 then back 0.2
+			at 0.73 sml for 0.2
+			at 1.0 arm for 0.333
+			at 1.6 sml duo for 0.266
+			at 1.933 arm for 0.466
+
+	camD.wav - cam right anim
+	(my info)	both arms from start for 0.2
+			at 0.6 both arms for 0.4
+			at 1.0 bot sml for 0.4
+			at 1.533 both arms for 0.4
+
+cams.obe
+	camsA.wav - jump boing - 1(S) length
+	camsB.wav - look - 3.33s length
+	(camsB back noise.wav - background camera motor noise, probably too much)
+
+
+fly.obe
+
+Stomp.obe
+	stompA - walk - 0.933 length - looping
+	ff 0.4
+	sf 0.866
+	stompB - run - 1.0(s) length - looping
+	ff 0.333
+	sf 0.8
+
+Vac.obe
+	VacA.wav - cycle 
+	VacB.wav - attack
+
+Other sounds: lazer blast, electric zap, electric crackle, conveyor rumble, bubbling chemicals.

@@ -1,0 +1,86 @@
+91
+4
+lp_arrow.wav
+end
+
+91
+4
+lp_mspke1.wav
+end
+
+70
+4
+lp_mspke2.wav
+end
+
+76
+4
+lp_mspke3.wav
+end
+
+boulder.obe
+3
+lp_boulder.wav
+end
+
+101
+4
+lp_lava.wav
+end
+
+480
+4
+lp_lava.wav
+end
+
+207
+4
+lp_arrow.wav
+end
+
+108
+4
+lp_water.wav
+end
+
+31
+4
+lp_scorpiona.wav
+end
+
+130
+4
+lp_croc.wav
+end
+
+end
+// Leave this here please!
+
+/*
+Mappings from character animations to sound effects
+
+Types: 
+
+0 Player with full animation range
+1 Multiplayer character
+2 Enemy
+3 Character
+
+
+Format:
+
+object name
+type
+wave file name
+end
+
+NOTE:
+
+The exact number of sfx entries must follow an actor type or BAD THINGS WILL HAPPEN!
+Currently
+	players have 43 animations (see frogger.h for latest figure)
+	Multiplayer characters ARE NOT IMPLEMENTED!
+	Enemies must have four regardless of how many they actually have
+	Characters are NOT IMPLEMENTED!
+*/
+

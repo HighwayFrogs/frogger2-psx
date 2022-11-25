@@ -1,0 +1,83 @@
+26
+4
+lp_pistlng.wav
+end
+
+14
+4
+lp_pline.wav
+end
+
+350
+4
+lp_mach1.wav
+end
+
+430
+4
+lp_hum.wav
+end
+
+481
+4
+lp_conv.wav
+end
+
+174
+4
+lp_pistlng.wav
+end
+
+438
+4
+lp_run3.wav
+end
+
+
+361
+4
+lp_mach2.wav
+end
+
+361
+4
+lp_conv.wav
+end
+
+371
+4
+lp_mach4.wav
+end
+
+
+end
+// Leave this here please!
+
+/*
+Mappings from character animations to sound effects
+
+Types: 
+
+0 Player with full animation range
+1 Multiplayer character
+2 Enemy
+3 Character
+
+
+Format:
+
+object name
+type
+wave file name
+end
+
+NOTE:
+
+The exact number of sfx entries must follow an actor type or BAD THINGS WILL HAPPEN!
+Currently
+	players have 43 animations (see frogger.h for latest figure)
+	Multiplayer characters ARE NOT IMPLEMENTED!
+	Enemies must have four regardless of how many they actually have
+	Characters are NOT IMPLEMENTED!
+*/
+

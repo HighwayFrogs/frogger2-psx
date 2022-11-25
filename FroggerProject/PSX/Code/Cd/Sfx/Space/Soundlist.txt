@@ -1,0 +1,32 @@
+/*
+
+Model File	Sound File	Anim Number 	(LOOPING / PLAYONCE)	
+				(-1 = Always)
+----------------------------------------------------------------------- 
+*/
+
+ANIM_SOUNDS aSounds[] = {
+///////////////////////////////////////////////////////////////
+
+"Bbot.obe",	"bbotA.wav",	walk,		LOOPING,
+"Bbot.obe",	"bbotB.wav", 	spin1,		LOOPING,
+"Bbot.obe",	"bbotC.wav", 	spin2,		LOOPING,
+"Bbot.obe",	"bbotD.wav", 	tumble,		LOOPING,
+"Beast.obe",	"beastA.wav",	idle, 		PLAYONCE,
+"Beast.obe",	"beastB.wav",	attack,		PLAYONCE,
+"Beast.obe",	"beastC.wav",	scratch,	PLAYONCE,
+"Fishead.obe",	"fisheadA.wav",	swim cycle,	LOOPING,
+"Fishead.obe",	"fisheadB.wav",	popup,		PLAYONCE,
+"muzap.obe",	"muzapA.wav",	on,		PLAYONCE,
+"muzap.obe",	"muzapB.wav", 	fire,		LOOPING,
+"muzap.obe",	"muzapC.wav", 	off, 		PLAYONCE,
+"muzap.obe",	"muzapD.wav", 	zap(All3),	PLAYONCE,
+"Seel.obe",	"seelA.wav",	cycle,		LOOPING,
+"Seyeball.obe",	"seyeballA.wav",cycle,		LOOPING,
+"ssnail.obe",	"ssnail.wav",	cycle,		LOOPING,
+"sprop.obe",	"spropA.wav",	cycle,		LOOPING,
+"ssat.obe",	"ssatA.wav",	cycle,		LOOPING,
+"tank.obe",	"tankA.wav", 	rumble,		LOOPING,
+
+///////////////////////////////////////////////////////////////
+"","",0,0};

@@ -1,0 +1,10 @@
+Garden		0
+Ancient		1
+Space		2
+City		3
+Sub		4
+Lab		5
+Halloween	6
+Super retro	7
+Frontend	8
+

@@ -1,0 +1,84 @@
+383
+4
+lp_arc.wav
+end
+
+snet.obe
+2
+lp_snet.wav
+0
+0
+0
+end
+
+478
+4
+lp_sir.wav
+end
+
+486
+4
+lp_sir.wav
+end
+
+469
+4
+lp_sbbb.wav
+end
+
+477
+4
+lp_sbbb.wav
+end
+
+19
+4
+lp_sir.wav
+end
+
+3
+4
+lp_sir.wav
+end
+
+211
+4
+lp_sbbb.wav
+end
+
+14
+4
+lp_sbbb.wav
+end
+
+end
+// Leave this here please!
+
+/*
+Mappings from character animations to sound effects
+
+Types: 
+
+0 Player with full animation range
+1 Multiplayer character
+2 Enemy
+3 Character
+
+
+Format:
+
+object name
+type
+wave file name
+end
+
+NOTE:
+
+The exact number of sfx entries must follow an actor type or BAD THINGS WILL HAPPEN!
+Currently
+	players have 43 animations (see frogger.h for latest figure)
+	Multiplayer characters ARE NOT IMPLEMENTED!
+	Enemies have a maximum of four
+	Characters are NOT IMPLEMENTED!
+*/
+

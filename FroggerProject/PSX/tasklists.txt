@@ -1,0 +1,102 @@
+--------------------------------
+--------------------------------
+ General Areas of Resonsibility
+--------------------------------
+--------------------------------
+
+Mike
+----
+Sound
+Music
+Spec FX
+Save/Load
+Scripting
+Text
+
+James
+-----
+Putting in Levels
+Enemies
+Platforms
+Chris' water
+Gen Graphics
+Fading
+Sliding textures
+
+Byron
+-----
+Other game logic
+Gameflow/menus
+Pad
+Camera
+Frog movement
+Anim textures
+
+
+
+
+--------------------------------
+--------------------------------
+ Tasks
+--------------------------------
+--------------------------------
+
+
+--------------
+Priority Tasks
+--------------
+
+Mike
+----
+SpecFX				10 days
+In Game text		2 days
+In game backgrounds	2 days
+Mem card			1 day
+Jump height			0.5 days
+Jumpy garib scale	0.5 day
+Sound				???			(Not in PC yet)
+Music				???			(Not in PC yet)
+
+James						 
+-----
+DrawDistance		0.5 days	(After optimisation)
+Anim speeds			2 days
+Slide textures		2 days
+Object converter	1 day		(update)
+Scripts				1 days
+Fix water			2 days
+check all water		2 days
+Putting levels in				(ongoing process, minimise repetition)
+
+Byron
+-----
+GameFlow			2 days		(Not on PC yet)
+Optimise Speed		15 days		(with others, Icache unfriendly, After merge)
+Game timers			2 days
+Fast QuatToMtX		1 day		(+Dave swift/other)
+Sub-div				3 days		(code available)
+Mem leak			2 days		(majority already done)
+Fix SitAndFace		0.5 days
+Pad					0.5 days
+PSI Anim textures				(talk to Andy Sidwell)
+
+
+Artist
+------
+Framing scene					(2/3 : 1/3  facing frog dir)
+
+
+PC merge/update related
+-----------------------
+Cam too slow					(frame rate related?)
+Cam buggy
+Orientation
+
+
+
+Unassigned tasks
+----------------
+Actor/lscape sort	
+Actor/water sort
+Psi sprite check
+
