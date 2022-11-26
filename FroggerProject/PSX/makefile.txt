@@ -23,11 +23,13 @@
 #OPT =  -comments-c++ -Wall -Wno-unused -DMAKE_GOLDCD=NO -DPALMODE -c -O0 -g -mgpopt -G32 -X0$80010000
 #OPT =  -comments-c++ -Wall -Wno-unused -DMAKE_GOLDCD=NO -DPALMODE=1 -c -O2 -g -mgpopt -G32 -X0$80010000
 
+PSYQ_LIBRARIES = ..\..\SDK\lib
+
 #pal master
 !if $(PAL) == 1
 !if $(MASTER) == 1
 OPT = -DPSX_VERSION -DPALMODE=1 -DGOLDCD=1 -c -O2 -mgpopt -G0 -X0$00010000 -comments-c++ 
-LIBISL = c:\ps\psx\library\lib\release
+LIBISL = ..\..\PSXLibraries\Lib\Release
 !endif
 !endif
 
@@ -36,7 +38,7 @@ LIBISL = c:\ps\psx\library\lib\release
 !if $(MASTER) == 0
 #OPT = -DPSX_VERSION -DPALMODE=1 -DGOLDCD=0 -c -O2 -mgpopt -G32 -g -X0$00018000 -comments-c++ -Wall -Wno-unused 
 OPT = -D_DEBUG -DPSX_VERSION -DPALMODE=1 -DGOLDCD=0 -c -O2 -mgpopt -G0 -g -X0$00018000 -comments-c++
-LIBISL = c:\ps\psx\library\lib\debug
+LIBISL = ..\..\PSXLibraries\Lib\Debug
 !endif
 !endif
 
@@ -44,7 +46,7 @@ LIBISL = c:\ps\psx\library\lib\debug
 !if $(PAL) == 0
 !if $(MASTER) == 1
 OPT = -DPSX_VERSION -DPALMODE=0 -DGOLDCD=1 -c -O2 -mgpopt -G0 -X0$00018000 -comments-c++
-LIBISL = c:\ps\psx\library\lib\release
+LIBISL = ..\..\PSXLibraries\Lib\Release
 !endif
 !endif
 
@@ -57,7 +59,7 @@ LIBISL = c:\ps\psx\library\lib\release
 #OPT = -DPSX_VERSION -DPALMODE=0 -DGOLDCD=0 -c -O2 -mgpopt -G0 -X0$00018000 -comments-c++
 OPT = -D_DEBUG -DPSX_VERSION -DPALMODE=0 -DGOLDCD=0 -c -g -O2 -mgpopt -G0 -X0$00010000 -comments-c++
 #OPT = -DPSX_VERSION -DPALMODE=0 -DGOLDCD=0 -c -O2 -mgpopt -G0 -g -X0$00018000 -comments-c++
-LIBISL = c:\ps\psx\library\lib\debug
+LIBISL = ..\..\PSXLibraries\Lib\Debug
 !endif
 !endif
 
@@ -97,7 +99,7 @@ frogger.cpe:    actor2.obj anim.obj babyfrog.obj bff_load.obj cam.obj collect.ob
 
 #				 slink /l $(LIBISL) /psx /c /wo /v /nostriplib @frogger.lnk,frogger.cpe,frogger.sym,frogger.map
 
-				 slink /l $(LIBISL) /psx /c /wo /v /strip @frogger.lnk,frogger.cpe,frogger.sym,frogger.map
+				 slink /l $(LIBISL) /l $(PSYQ_LIBRARIES) /psx /c /wo /v /strip @frogger.lnk,frogger.cpe,frogger.sym,frogger.map
 
 
 

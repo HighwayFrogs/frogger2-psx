@@ -1,0 +1,29 @@
+<iso_project image_name="mkpsxiso.bin" cue_sheet="mkpsxiso.cue">
+    <track type="data">
+        <identifiers system="PLAYSTATION" application="PLAYSTATION" creation_date="0000081023352200+36"/>
+        <license file="./license_data.dat"/>
+        <default_attributes gmt_offs="36" xa_attrib="56" xa_perm="1365" xa_gid="0" xa_uid="0"/>
+        <directory_tree>
+            <file name="01S.STR" source="Files\01S.STR" type="mixed"/>
+            <file name="02S.STR" source="Files\02S.STR" type="mixed"/>
+            <file name="03S.STR" source="Files\03S.STR" type="mixed"/>
+            <file name="04S.STR" source="Files\04S.STR" type="mixed"/>
+            <file name="05S.STR" source="Files\05S.STR" type="mixed"/>
+            <file name="06S.STR" source="Files\06S.STR" type="mixed"/>
+            <file name="07S.STR" source="Files\07S.STR" type="mixed"/>
+            <file name="08S.STR" source="Files\08S.STR" type="mixed"/>
+            <file name="09S.STR" source="Files\09S.STR" type="mixed"/>
+            <file name="10S.STR" source="Files\10S.STR" type="mixed"/>
+            <file name="11S.STR" source="Files\11S.STR" type="mixed"/>
+            <file name="12S.STR" source="Files\12S.STR" type="mixed"/>
+            <file name="BLITZS.STR" source="Files\BLITZS.STR" type="mixed"/>
+            <file name="CDA.XA" source="Files\CDA.XA" type="mixed"/>
+            <file name="CDB.XA" source="Files\CDB.XA" type="mixed"/>
+            <file name="HASBROS.STR" source="Files\HASBROS.STR" type="mixed"/>
+            <file name="FROGGER.DAT" source="FROGGER.DAT" type="data"/>
+            <file name="SLUS_011.72" source="SLUS_011.72" type="data"/>
+            <file name="SYSTEM.CNF" source="SYSTEM.CNF" type="data"/>
+            <file name="DUMMY." source="Files\DUMMY" type="data"/>
+        </directory_tree>
+    </track>
+</iso_project>

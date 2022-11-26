@@ -637,7 +637,7 @@ int PlaySample( SAMPLE *sample, SVECTOR *pos, long radius, short volume, short p
  //		else	//PUT BACK IN?!?!
  			pos = &amb->pos;
  
-		if(amb->sample->snd->pad & 1)
+		if(amb->sample->snd->flags & 1)
 			UpdateLoopingSample(amb);
 		else
 			PlaySample(amb->sample, &amb->pos, amb->radius, amb->volume, amb->pitch );

@@ -1,0 +1,6 @@
+Note, the NONE2.LIB in "debug" isn't actually NONE2.LIB at all. It's LIBSN.LIB
+
+(The one in "release" IS NONE2.LIB. Honest)
+
+(This avoids silliness in .LNK files)
+
