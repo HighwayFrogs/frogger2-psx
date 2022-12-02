@@ -1,7 +1,7 @@
 <iso_project image_name="mkpsxiso.bin" cue_sheet="mkpsxiso.cue">
     <track type="data">
         <identifiers system="PLAYSTATION" application="PLAYSTATION" creation_date="0000081023352200+36"/>
-        <license file="./license_data.dat"/>
+        <license file="..\LICENSEA.dat"/>
         <default_attributes gmt_offs="36" xa_attrib="56" xa_perm="1365" xa_gid="0" xa_uid="0"/>
         <directory_tree>
             <file name="01S.STR" source="Files\01S.STR" type="mixed"/>

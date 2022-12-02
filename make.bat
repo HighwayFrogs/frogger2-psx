@@ -58,9 +58,6 @@ copy TEMP\frogger.sym burn
 if "%COUNTRY_CODE%"=="A"  copy sys_a.cnf burn\system.cnf
 if "%COUNTRY_CODE%"=="E"  copy sys_e.cnf burn\system.cnf
 
-if "%COUNTRY_CODE%"=="A"  copy LICENSEA.DAT burn\license_data.dat
-if "%COUNTRY_CODE%"=="E"  copy LICENSEE.DAT burn\license_data.dat
-
 :: CREATE DAT FILE
 if EXIST burn\frogger.dat del burn\frogger.dat
 copy TEMP\*.bin Files
@@ -74,7 +71,7 @@ cd ..\
 if not exist CD md CD
 if exist CD\FROGGER2.bin del CD\FROGGER2.bin
 if exist CD\FROGGER2.cue del CD\FROGGER2.cue
-mkpsxiso --output CD\FROGGER2.bin --cuefile CD\FROGGER2.cue Burn/Disc.xml
+mkpsxiso --output CD\FROGGER2.bin --cuefile CD\FROGGER2.cue Burn/Disc-%COUNTRY_CODE%.xml
 if errorlevel 1 goto error
 
 goto okay
