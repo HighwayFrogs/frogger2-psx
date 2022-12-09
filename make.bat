@@ -44,8 +44,7 @@ if errorlevel 1 goto error
 if NOT EXIST frogger.cpe goto error
 
 :: Convert Frogger 2 executable to PSX-EXE.
-REM TEST /c%1 TODO: !
-cpe2exe frogger.cpe 0x801fff00
+cpe2exe frogger.cpe %COUNTRY_CODE% 0x801ffff0
 if NOT EXIST frogger.exe goto error
 
 :: Move output to burn folder.

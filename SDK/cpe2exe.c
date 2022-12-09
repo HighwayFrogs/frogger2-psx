@@ -31,14 +31,16 @@ typedef struct {
 typedef struct mylist {
 	long base, size;
 	long fofs;
-	mylist *next;
+	mylist* next;
 } MYLIST;
 
 #define HEADER_SIZE 2048
 
 e_header head;
 
-char	sign[] = "Sony Computer Entertainment Inc. for Japan area";	// ADDED
+char signUsa[] = "Sony Computer Entertainment Inc. for North America area";
+char signEur[] = "Sony Computer Entertainment Inc. for Europe area";
+char signJap[] = "Sony Computer Entertainment Inc. for Japan area";
 
 int	main(int argc, char* argv[])
 {
@@ -55,18 +57,18 @@ int	main(int argc, char* argv[])
 	char flname[256];	// ADDED
 
 	if (argc <= 1) {
-		printf("Usage: cpe2exe <file.cpe> [default_stack]\n");
-		printf("Example: cpe2exe frogger.cpe 0x801fff00\n");
+		printf("Usage: cpe2exe <file.cpe> [region: AEJ] [default_stack]\n");
+		printf("Example: cpe2exe frogger.cpe E 0x801fff00\n");
 		exit(1);
 	}
 
 	// Open file.
 	filein = fopen(argv[1], "rb");
 	if (filein == NULL) {
-		perror("fopen");
+		perror("Failed to open file.");
 		exit(-1);
 	}
-	
+
 	fread(psx, 6, 1, filein);
 	if (psx[0] != 'C' || psx[1] != 'P' || psx[2] != 'E') {
 		fclose(filein);
@@ -74,13 +76,46 @@ int	main(int argc, char* argv[])
 		exit(-1);
 	}
 
+	// Region code.
+	char region_code = 'J';
+	if (argc >= 3) {
+		if (strlen(argv[2]) != 1) {
+			printf("Invalid region code: '%s'.\n", argv[2]);
+			exit(-1);
+		}
+
+		region_code = argv[2][0];
+	}
+
+	char* sign;
+	switch (region_code) {
+	case 'A':
+	case 'a':
+		sign = &signUsa[0];
+		printf("Using American region.\n");
+		break;
+	case 'e':
+	case 'E':
+		sign = &signEur[0];
+		printf("Using European region.\n");
+		break;
+	case 'j':
+	case 'J':
+		sign = &signJap[0];
+		printf("Using Japanese region.\n");
+		break;
+	default:
+		printf("Invalid region code: '%c'.\n", region_code);
+		exit(-1);
+	}
+
 	// Default stack.
 	long default_stack = 0x801ffff0;
-	if (argc >= 2) {
-		char* startPtr = (argv[2][1] == 'x' ? &argv[2][2] : argv[2]);
+	if (argc >= 4) {
+		char* startPtr = (argv[3][1] == 'x' ? &argv[3][2] : argv[3]);
 		default_stack = (long)strtoul(startPtr, &startPtr + strlen(startPtr), 16);
 		if (!default_stack) {
-			printf("Invalid stack offset '%s'.\n", argv[2]);
+			printf("Invalid stack offset '%s'.\n", argv[3]);
 			exit(-1);
 		}
 	}
@@ -108,7 +143,8 @@ int	main(int argc, char* argv[])
 
 			if (count++ > 0) {
 				last->next = temp;
-			} else {
+			}
+			else {
 				root = temp;
 			}
 			last = temp;
@@ -191,7 +227,7 @@ int	main(int argc, char* argv[])
 	buffer = (char*)malloc(HEADER_SIZE);
 	memset(buffer, 0, HEADER_SIZE);
 	memcpy(buffer, &head, sizeof(e_header));
-	memcpy(&buffer[0x4C], sign, sizeof(sign));	// ADDED
+	memcpy(&buffer[0x4C], sign, strlen(sign));	// ADDED
 	fwrite(buffer, HEADER_SIZE, 1, fileout);
 	fclose(fileout);
 	fclose(filein);

@@ -39,7 +39,6 @@
 #include <pcmisc.h>
 #include <pcaudio.h>
 #include <pcsprite.h>
-#include <net.h>
 #endif
 
 #ifdef PSX_VERSION
@@ -729,11 +728,7 @@ int mpltexty = -150;
 #elif PC_VERSION
 int mpltextx = 0;
 int mpltexty = -200;
-char mplNameStr[4][64];
 #endif
-
-
-
 void RunMultiplayer( )
 {
 	int i;
@@ -1179,7 +1174,7 @@ void FreeMultiplayer( )
 	Returns			: 
 	Info			:
 */
-extern char *numberText[4];
+char numString[4][4] = {"1","2","3","4"};
 void ReinitialiseMultiplayer( )
 {
 	int i;
@@ -1248,19 +1243,7 @@ void ReinitialiseMultiplayer( )
 
 	for( i=0; i<NUM_FROGS; i++ )
 	{
-#ifdef PC_VERSION
-		if(gameState.multi == MULTIREMOTE)
-		{
-			sprintf(mplNameStr[i],"%d - %s",i+1,NetGetPlayerName(i));
-			mpl[i].nameText = CreateAndAddTextOverlay(backCharsX[i] + 512,backCharsY[i] + 160,mplNameStr[i],NO,255,fontSmall,TEXTOVERLAY_SHADOW);
-			
-			if((i == 1) || (i == 2))
-			{
-				mpl[i].nameText->xPos = backCharsX[i] - (float)(CalcStringWidth(mpl[i].nameText->text,(MDX_FONT *)mpl[i].nameText->font,((float)mpl[i].nameText->scale)/4096.0) + 2) * 6.4;
-			}
-		}
-#endif
-			mpl[i].numText = CreateAndAddTextOverlay(-1000,0,numberText[i],YES,255,font,TEXTOVERLAY_SHADOW);
+		mpl[i].numText = CreateAndAddTextOverlay(-1000,0,numString[i],YES,255,font,TEXTOVERLAY_SHADOW);
 		if(gameState.difficulty == DIFFICULTY_HARD)
 			mpl[i].trail = MULTI_BATTLE_TRAILLENGTH*2;
 		else

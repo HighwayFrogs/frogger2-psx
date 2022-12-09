@@ -359,18 +359,10 @@ void InitMultiHUD()
 		break;
 	}
 
-	if(gameState.multi == MULTIREMOTE)
-	{
-		menuText[0] = CreateAndAddTextOverlay(2048,2400,GAMESTRING(STR_QUIT),YES,0,font,TEXTOVERLAY_SHADOW);
-		menuText[1] = NULL;
-	}
-	else
-	{
-		menuText[0] = CreateAndAddTextOverlay(2048,2400,GAMESTRING(STR_RESTARTLEVEL),YES,0,font,TEXTOVERLAY_SHADOW);
-		menuText[1] = CreateAndAddTextOverlay(2048,2700,GAMESTRING(STR_QUIT),YES,0,font,TEXTOVERLAY_SHADOW);
-		menuText[1]->draw = 0;
-	}
+	menuText[0] = CreateAndAddTextOverlay(2048,2400,GAMESTRING(STR_RESTARTLEVEL),YES,0,font,TEXTOVERLAY_SHADOW);
+	menuText[1] = CreateAndAddTextOverlay(2048,2700,GAMESTRING(STR_QUIT),YES,0,font,TEXTOVERLAY_SHADOW);
 	menuText[0]->draw = 0;	
+	menuText[1]->draw = 0;
 
 	multiHud.centreText = CreateAndAddTextOverlay(2048,900,countdownString,YES,255,font,TEXTOVERLAY_SHADOW);
 
@@ -529,8 +521,8 @@ void EnableHUD(void)
 {
 	int i;
 
-	//if( screenshotEnable )
-	//	return;
+	if( screenshotEnable )
+		return;
 
 	if( gameState.multi != SINGLEPLAYER )
 	{
@@ -1179,6 +1171,6 @@ void InitInGameTextOverlays(unsigned long worldID,unsigned long levelID)
 	babySavedText = CreateAndAddTextOverlay(2048,110,"BABY SAVED",YES,255,0,0);
 	DisableTextOverlay(babySavedText);
 
-	//if( screenshotEnable ) 
-		//DisableHUD( );
+	if( screenshotEnable ) 
+		DisableHUD( );
 }

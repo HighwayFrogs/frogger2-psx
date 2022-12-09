@@ -223,7 +223,7 @@ void StartPauseMenu()
 		sprintf( pauseTitleString, "%s %s", GAMESTRING(STR_CHAR_NAME_1+player[pauseController].character), GAMESTRING(STR_PAUSE_MODE) );
 	EnableTextOverlay ( pauseTitleText );
 	continueText->r = continueText->g = continueText->b = 255;
-	if((gameState.oldMode == FRONTEND_MODE) || (gameState.multi == MULTIREMOTE))
+	if(gameState.oldMode == FRONTEND_MODE)
 		quitText->yPos = quitText->yPosTo = restartText->yPos;
 	else
 	{
@@ -440,7 +440,7 @@ void RunPauseMenu()
 				return;
 #endif
 
- 				if((gameState.oldMode == FRONTEND_MODE) || (gameState.multi == MULTIREMOTE))
+ 				if(gameState.oldMode == FRONTEND_MODE)
  				{
 					PostQuitMessage(0);
  				}
@@ -557,7 +557,7 @@ void RunPauseMenu()
 #endif
 				)
 			{
-				if((gameState.oldMode == FRONTEND_MODE) || (pauseConfirmMode) || (gameState.multi == MULTIREMOTE))
+				if((gameState.oldMode == FRONTEND_MODE) || (pauseConfirmMode))
 					currentPauseSelection = 1;
 				else
 					currentPauseSelection = 2;
@@ -569,7 +569,7 @@ void RunPauseMenu()
 
 		if(padData.debounce[pauseController]&PAD_DOWN)
 		{
-			if((((gameState.oldMode == FRONTEND_MODE) || (pauseConfirmMode) || (gameState.multi == MULTIREMOTE)) && (currentPauseSelection == 1)) || (currentPauseSelection == 2))
+			if((((gameState.oldMode == FRONTEND_MODE) || (pauseConfirmMode)) && (currentPauseSelection == 1)) || (currentPauseSelection == 2))
 				currentPauseSelection =
 #ifdef DREAMCAST_VERSION
 				(pauseConfirmMode?0:1)
@@ -601,7 +601,7 @@ void RunPauseMenu()
 		SubTextOverlay(yesText);
 		SubTextOverlay(noText);
 		quittingLevel = 0;
-		if((gameState.oldMode != FRONTEND_MODE) && (gameState.multi != MULTIREMOTE))
+		if(gameState.oldMode != FRONTEND_MODE)
 			restartText->draw = 1;
 		quitText->draw = 1;
 #ifndef DREAMCAST_VERSION
@@ -694,7 +694,7 @@ void RunPauseMenu()
 					pauseConfirmMode = 0;
 					SubTextOverlay(yesText);
 					SubTextOverlay(noText);
-					if((gameState.oldMode == FRONTEND_MODE) || (gameState.multi == MULTIREMOTE))
+					if(gameState.oldMode == FRONTEND_MODE)
 						currentPauseSelection = 1;
 					else
 					{
@@ -711,7 +711,7 @@ void RunPauseMenu()
 				}
 				else
 				{
-					if((gameState.oldMode != FRONTEND_MODE) && (gameState.multi != MULTIREMOTE))
+					if(gameState.oldMode != FRONTEND_MODE)
 					{
 						quittingLevel = 1;
 						pauseConfirmMode = 1;
@@ -796,7 +796,7 @@ void RunPauseMenu()
 				break;
 	*/	
 			case 1:
-				if((gameState.oldMode != FRONTEND_MODE) && (gameState.multi != MULTIREMOTE))
+				if(gameState.oldMode != FRONTEND_MODE)
 				{
 					restartText->r = 127+((rsin(pauseFrameCount*4000)+4096)*64)/4096;
 					restartText->g = 127+((rcos(pauseFrameCount*4000)+4096)*64)/4096;
@@ -967,8 +967,8 @@ void RunFrontendGameLoop (void)
 #ifdef PSX_VERSION
 #if GOLDCD==0
 	#ifndef FINAL_MASTER
-			if(cheatCombos[CHEAT_OPEN_ALL_LEVELS].state == 0)
-				ComboCheat(CHEAT_OPEN_ALL_LEVELS);
+//			if(cheatCombos[CHEAT_OPEN_ALL_LEVELS].state == 0)
+//				ComboCheat(CHEAT_OPEN_ALL_LEVELS);
 	#endif	
 #endif
 #else
@@ -1663,7 +1663,7 @@ void RunFrontendGameLoop (void)
 		if(gameState.mode == ARTVIEWER_MODE)
 			return;
 	}
-	
+
 
 	
 
@@ -1756,6 +1756,7 @@ void RunFrontendGameLoop (void)
 
 
 //	if(currTileNum != 1)
+
 	{
 		if (!reachedPoint)
 		{
@@ -1768,6 +1769,7 @@ void RunFrontendGameLoop (void)
 
 	SetCamFF(currCamSource,currCamTarget);
 
+	
 	for( i=0; i<NUM_FROGS; i++ )
 	{
 		if( frog[i] )

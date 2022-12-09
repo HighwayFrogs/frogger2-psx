@@ -91,7 +91,11 @@ typedef struct _NMEHACK {
 } NMEHACK;
 
 NMEHACK enemyAnimHack[] = {
+#ifdef DREAMCAST_VERSION
 #include "nmehack.txt"
+#else
+#include "nmehack.txt"
+#endif
 };
 
 // Reactive Anims
@@ -105,7 +109,11 @@ NMEHACK enemyAnimHack[] = {
 #define ANI_REACTIVE	(1 << 31)
 
 REACTIVEANIM reactiveAnims[] = {
+#ifdef DREAMCAST_VERSION
 #include "reactive.txt"
+#else
+#include "reactive.txt"
+#endif
 };
 
 DEATHANIM_FUNC deathAnims[NUM_DEATHTYPES];

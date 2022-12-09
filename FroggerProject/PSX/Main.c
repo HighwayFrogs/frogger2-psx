@@ -191,7 +191,8 @@ void LoadCodeOverlay(int num)
 			break;
 	}
 #if GOLDCD == 0
-	strcpy(FILEIO_PCROOT, "x:\\TEAMSPIRIT\\PSXVERSION\\CD\\");
+//		strcpy(FILEIO_PCROOT, "x:\\TEAMSPIRIT\\PSXVERSION\\CD\\");
+		strcpy(FILEIO_PCROOT, "C:\\WORK\\FROGGERPROJECT\\PSX\\CODE\\CD\\");
 #endif
 }
 
@@ -521,8 +522,8 @@ int main ( )
 		StartSound();//mmsfx
 
 #if GOLDCD == NO
-		fileInitialise("x:\\TEAMSPIRIT\\PSXVERSION\\CD\\");
-//		fileInitialise("C:\\WORK\\FROGGERPROJECT\\PSX\\CODE\\CD\\");
+//		fileInitialise("x:\\TEAMSPIRIT\\PSXVERSION\\CD\\");
+		fileInitialise("C:\\WORK\\FROGGERPROJECT\\PSX\\CODE\\CD\\");
 		//XAsetStatus(CdInit());
 #else
 		fileInitialise("\\FROGGER.DAT;1");

@@ -11,3 +11,8 @@ BUILD/Files/game.bin
 BUILD/Files/lang.bin
 BUILD/Files/video.bin
 BUILD/CD
+PSXLibraries/Src/C
+PSXLibraries/Src/*/*.obj
+PSXLibraries/Src/*/Release/*.lib
+PSXLibraries/Src/*/Debug/*.lib
+SDKOptions/

@@ -264,11 +264,9 @@ void GameLoop(void)
 		break;
 #endif
 */
-#ifdef PC_DEMO
 	case TEASERSCREEN_MODE:
 		RunTeaserScreens( );
 		break;
-#endif
 	}
 
 	frameCount++;
@@ -1001,13 +999,10 @@ void DoEndMulti()
 	if(optionSelected == 0)
 	{
 		INC_ALPHA(menuText[0],255);
-		if(menuText[1])
-		{
-			INC_ALPHA(menuText[1],255);
-		}
+		INC_ALPHA(menuText[1],255);
 		if((menuOption == 1) && (padData.digital[0] & PAD_UP))
 			menuOption = 0;
-		else if((menuOption == 0) && (padData.digital[0] & PAD_DOWN) && (gameState.multi == MULTILOCAL))
+		else if((menuOption == 0) && (padData.digital[0] & PAD_DOWN))
 			menuOption = 1;
 		else if(padData.digital[0] & PAD_CROSS)
 		{
@@ -1018,8 +1013,7 @@ void DoEndMulti()
 		menuText[menuOption]->g = 127+((rcos(actFrameCount*4000)+4096)*64)/4096;
 		menuText[menuOption]->b = 10;
 
-		if(menuText[1 - menuOption])
-			menuText[1 - menuOption]->r = menuText[1 - menuOption]->g = menuText[1 - menuOption]->b = 255;
+		menuText[1 - menuOption]->r = menuText[1 - menuOption]->g = menuText[1 - menuOption]->b = 255;
 
 		return;
 	}
@@ -1031,8 +1025,6 @@ void DoEndMulti()
 		{
 			if(menuOption == 0)
 			{
-				if(gameState.multi == MULTIREMOTE)
-					PostQuitMessage(0);		
 				ScreenFade(128,255,30);
 				fadeText = NO;
 				keepFade = 0;
@@ -1056,22 +1048,31 @@ void DoEndMulti()
 				multiHud.centreText->yPos = 900;
 				RestartMulti();
 				gameState.mode = INGAME_MODE;
-				menuText[0]->draw = 0;
-				if(menuText[1])
-					menuText[1]->draw = 0;
+				menuText[0]->draw = menuText[1]->draw = 0;
 			}
 			else
 			{
 				player[0].character = FROG_FROGGER;
 				NUM_FROGS=1;
 
-				gameState.multi = SINGLEPLAYER;
+				if( gameState.multi == MULTIREMOTE )
+				{
+#ifdef PC_VERSION
+					// I'm sure there's a nicer way of doing this, but this does the job for now - ds
+					PostQuitMessage(0);		
+#endif
+				}
+				else
+				{
+					gameState.multi = SINGLEPLAYER;
 
-				gameState.mode = FRONTEND_MODE;
-				FreeMultiplayer( );
-				InitLevel(WORLDID_FRONTEND,LEVELID_FRONTEND1);
+					gameState.mode = FRONTEND_MODE;
+					FreeMultiplayer( );
+					InitLevel(WORLDID_FRONTEND,LEVELID_FRONTEND1);
 
-				frameCount = 0;
+					frameCount = 0;
+//					menuText[0] = NULL;
+				}
 			}
 			menuOption = -1;
 		}
@@ -1095,10 +1096,7 @@ void DoEndMulti()
 			}
 		}
 		DEC_ALPHA(menuText[0]);
-		if(menuText[1])
-		{
-			DEC_ALPHA(menuText[1]);
-		}
+		DEC_ALPHA(menuText[1]);
 	}
 #endif
 }

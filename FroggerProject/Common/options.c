@@ -262,7 +262,6 @@ CREDIT_DATA creditData[] =
 	0,GREEN,
 	0,GREEN,
 	0,GREEN,
-	0,GREEN,
 
 	3,RED,		//for Hasbro Interactive Europe
 	0,RED,
@@ -1987,7 +1986,7 @@ void RunOptionsMenu(void)
 			else
 			{
 				options.numPlayers = min(maxPlayers,max(2,options.numPlayers));
-				sprintf(options.numPStr,"%d %s",options.numPlayers,GAMESTRING(STR_PLAYERS));
+				sprintf(options.numPStr,"%d %s",options.numPlayers,GAMESTRING(STR_PLAYER));
 				options.numPStr2[0] = 0;
 			}
 
@@ -3184,7 +3183,6 @@ void RunArtViewer()
 
 #define MAX_TEASERS 6
 
-#ifdef PC_DEMO
 void RunTeaserScreens( )
 {
 	char name[32];
@@ -3204,20 +3202,6 @@ void RunTeaserScreens( )
 		{
 			PostQuitMessage(0);
 		}
-		else if( currentArt == MAX_TEASERS-1 )
-		{
-			strcpy( name, "LOADING" );
-			if( CheckUS() )
-				strcat( name, "US" );
-			else
-				strcat( name, "EU" );
-
-			InitBackdrop(name);
-			currentArt++;
-			ScreenFade(0,255,30);
-			GTInit(&artTimer,6);
-			keepFade = NO;
-		}
 		else
 		{
 			sprintf(name,"TEASER%d",currentArt);
@@ -3229,7 +3213,7 @@ void RunTeaserScreens( )
 		}
 	}
 }
-#endif
+
 
 #ifdef DREAMCAST_VERSION
 void ToggleStereo( )

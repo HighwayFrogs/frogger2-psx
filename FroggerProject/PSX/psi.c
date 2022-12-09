@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include "shell.h"
 #include "islpsi.h"
-#include <psitypes.h>
+#include "psitypes.h"
 #include "quatern.h"
 #include <islmem.h>
 #include <islfile.h>

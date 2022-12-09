@@ -207,7 +207,7 @@ void loadingInitText(int worldID, int levelID)
 	else if(gameState.multi == SINGLEPLAYER)
 	{
 		if((gameState.mode != DEMO_MODE) && (gameState.single == ARCADE_MODE) && (worldID != WORLDID_FRONTEND) && (worldID != WORLDID_SUPERRETRO))
-			sprintf ( coinStr, "%s : %d",GAMESTRING(STR_COINS), worldVisualData[worldID].levelVisualData[levelID].maxCoins );
+			sprintf ( coinStr, "%s: %d",GAMESTRING(STR_COINS), worldVisualData[worldID].levelVisualData[levelID].maxCoins );
 		else
 			coinStr[0] = 0;
 	}
