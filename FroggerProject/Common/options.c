@@ -262,6 +262,9 @@ CREDIT_DATA creditData[] =
 	0,GREEN,
 	0,GREEN,
 	0,GREEN,
+#if PALMODE
+	0,GREEN,
+#endif
 
 	3,RED,		//for Hasbro Interactive Europe
 	0,RED,
@@ -1986,7 +1989,11 @@ void RunOptionsMenu(void)
 			else
 			{
 				options.numPlayers = min(maxPlayers,max(2,options.numPlayers));
+#if PALMODE
+				sprintf(options.numPStr,"%d %s",options.numPlayers,GAMESTRING(STR_PLAYERS));
+#else
 				sprintf(options.numPStr,"%d %s",options.numPlayers,GAMESTRING(STR_PLAYER));
+#endif
 				options.numPStr2[0] = 0;
 			}
 

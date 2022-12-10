@@ -1,9 +1,15 @@
 # Frogger 2: Swampy's Revenge (PlayStation)  
 This is a backup of Frogger 2's official source code from August 2000.  
-The retail NTSC version of the game was built on August 10th 2000, and the PAL version was on August 14th 2000.  
-This is a setup modified in order to allow for easy compilation, and so that it builds a byte-for-byte match of the August 11 PAL build found on the August 15 ISO.  
+This is a setup modified in order to allow for easy compilation.  
 
 **Developer:** Blitz Games  
+
+## What version does this build?  
+This builds perfect byte-for-byte matches of the retail/final NTSC and PAL builds.  
+The retail NTSC version was originally built on August 10th, 2000.  
+The retail PAL version was originally built on August 14th, 2000.  
+FROGGER.DAT (the file containing the game assets) is not an exact match, but only because it doesn't record files in the same order.  
+The actual files contained in FROGGER.DAT are perfect matches.  
 
 ## How to compile and run?
 Run `make.bat`. Choose your region.  

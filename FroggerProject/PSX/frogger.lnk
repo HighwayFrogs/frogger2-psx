@@ -195,7 +195,7 @@ lang	group	over(video),file("lang.bin")
     inclib  "libds.lib"
 
     inclib  "libmath.lib"
-	inclib	"libcrypt.lib"
+	%LIBCRYPT_CONDITIONAL_INCLUDE%
 
 
 

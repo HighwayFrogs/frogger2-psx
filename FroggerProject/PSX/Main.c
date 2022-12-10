@@ -566,7 +566,7 @@ int main ( )
 				ScreenFade(255,0,30);
 #if GOLDCD==1		
 #if PALMODE==1
-				initialiseCrypt();
+				//initialiseCrypt();
 #endif
 #endif
 			}
@@ -1226,7 +1226,7 @@ void DisplayOnScreenInfo ( void )
 }
 
 
-
+#if PALMODE==0
 void initialiseCrypt()
 {
 	unsigned char result[8];
@@ -1245,3 +1245,4 @@ void initialiseCrypt()
 		VSync(1);
 	utilPrintf("Obtained crypt key\n");
 }
+#endif

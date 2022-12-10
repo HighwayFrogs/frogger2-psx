@@ -28,7 +28,7 @@
 #include "frontend.h"
 #include "layout.h"
 #include "multi.h"
-#include "menus.h"
+%PLACEHOLDER_LINE_MATCHER%
 
 
 int camControlMode = 0;
@@ -646,7 +646,7 @@ void UpdateCameraPosition( )
 		{
 			if (currTile[i] && lastTile[i])
 			{
-				if(camFacing[i] == prevCamFacing[i])
+				if (camFacing[i] == prevCamFacing[i])
 					camFacing[i] = GetTilesMatchingDirection(lastTile[i],camFacing[i],currTile[i]);
 			}
 			prevCamFacing[i] = camFacing[i];

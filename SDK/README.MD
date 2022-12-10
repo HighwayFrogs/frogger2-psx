@@ -9,3 +9,4 @@ I put it together by combining various different things:
  - A few proprietary Blitz Games tools.  
  - CPE2EXE (Orion's Version, Modified by Kneesnap to work with CPE files that have many sections. Modified code is at cpe2exe.c)  
  - Libcrypt  
+ - Command-line replace utility (Based on https://github.com/daniel-Jones/replace of the GPLv3 License)  

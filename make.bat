@@ -30,8 +30,24 @@ del BUILD\burn\SLES_028.53
 copy FroggerProject\Common BUILD\TEMP
 copy FroggerProject\psx BUILD\TEMP
 
-:: Setup makefile.
+:: Move to working folder.
 cd BUILD\TEMP
+
+:: Update linker file.
+if "%COUNTRY_CODE%"=="A" replace_line frogger.lnk frogger.lnk "%%LIBCRYPT_CONDITIONAL_INCLUDE%%" "inclib\t""libcrypt.lib"""
+if "%COUNTRY_CODE%"=="E" replace_line frogger.lnk frogger.lnk "%%LIBCRYPT_CONDITIONAL_INCLUDE%%" "; Skipping libcrypt due to PAL build."
+
+:: Update cam.c
+:: This is here purely to allow for a perfectly (byte for byte) matching executable.
+:: The PAL version removes the #include menus.h line, but the NTSC version has it.
+:: Normally for differences we use compiler flags. However, line numbers are used in allocation error messages.
+:: We can't use compiler flags to spoof line numbers, and I figured since it only happens once, the simplest solution would be to do this.
+:: If you plan to to modifications to the code, this might as well be removed.
+:: It's here exclusively to make matching byte-for-byte PAL builds.
+if "%COUNTRY_CODE%"=="A" replace_line cam.c cam.c "%%PLACEHOLDER_LINE_MATCHER%%\n" "#include ""menus.h""\n"
+if "%COUNTRY_CODE%"=="E" replace_line cam.c cam.c "%%PLACEHOLDER_LINE_MATCHER%%\n" ""
+
+:: Setup makefile.
 copy makefile.txt makefile.mak
 depend *.c >>makefile.mak
 
