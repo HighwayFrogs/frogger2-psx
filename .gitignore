@@ -6,9 +6,10 @@ BUILD/Burn/SLUS_011.72
 BUILD/Burn/SLES_028.53
 BUILD/Burn/system.cnf
 BUILD/Burn/license_data.dat
-BUILD/Files/game.bin
-BUILD/Files/lang.bin
-BUILD/Files/video.bin
+BUILD/Assets/game.bin
+BUILD/Assets/lang.bin
+BUILD/Assets/video.bin
+BUILD/Assets/language.txt
 BUILD/CD
 PSXLibraries/Src/C
 PSXLibraries/Src/*/*.obj

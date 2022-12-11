@@ -75,8 +75,9 @@ if "%COUNTRY_CODE%"=="E"  copy sys_e.cnf burn\system.cnf
 
 :: CREATE DAT FILE
 if EXIST burn\frogger.dat del burn\frogger.dat
-copy TEMP\*.bin Files
-cd Files
+copy /Y language%COUNTRY_CODE%.txt Assets\language.txt
+copy TEMP\*.bin Assets
+cd Assets
 
 datstak /r ..\burn\frogger.dat
 if errorlevel 1 goto error
