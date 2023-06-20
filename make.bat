@@ -65,6 +65,11 @@ if NOT EXIST frogger.exe goto error
 
 :: Move output to burn folder.
 cd ..\
+
+echo Executable SHA1 Hash:
+certutil -hashfile TEMP\frogger.exe SHA1
+PAUSE
+
 if "%COUNTRY_CODE%"=="A"  move TEMP\frogger.exe burn\SLUS_011.72
 if "%COUNTRY_CODE%"=="E"  move TEMP\frogger.exe burn\SLES_028.53
 copy TEMP\frogger.map burn

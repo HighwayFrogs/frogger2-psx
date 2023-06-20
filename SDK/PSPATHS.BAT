@@ -1,6 +1,6 @@
 REM ================= PSX DEVELOPMENT ENVIRONMENT VARIABLES =============
 REM       RELEASE 1.8 LIBRARY 3.6.1 Date: 1-31-1998 Time: 21:38:44
-set PATH=%~dp0bin;
+set PATH=%~dp0bin;%WINDIR%\system32;
 set PSX_PATH=%~dp0bin
 set LIBRARY_PATH=%~dp0lib
 set C_PLUS_INCLUDE_PATH=%~dp0include
