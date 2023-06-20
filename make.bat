@@ -27,8 +27,8 @@ if not exist BUILD\Burn md BUILD\Burn
 del BUILD\TEMP /Q
 del BUILD\burn\SLUS_011.72
 del BUILD\burn\SLES_028.53
-copy FroggerProject\Common BUILD\TEMP
-copy FroggerProject\psx BUILD\TEMP
+copy Source\Common BUILD\TEMP
+copy Source\psx BUILD\TEMP
 
 :: Move to working folder.
 cd BUILD\TEMP
